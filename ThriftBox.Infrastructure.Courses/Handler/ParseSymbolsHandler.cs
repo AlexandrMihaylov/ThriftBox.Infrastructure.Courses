@@ -37,7 +37,7 @@ public class ParseSymbolsHandler : IParseSymbolsHandler
         if (charList.Any())
         {
             courses.IsSymbol = true;
-            courses.ListCoursesInfo = charList.Where(p => p.CharCode == symbol).ToList();
+            courses.ListCoursesInfo = charList;
         }
         else
         {
