@@ -32,8 +32,9 @@ public class ParseSymbolsHandler : IParseSymbolsHandler
                 coursesList.Add(courseInfo);
             }
         }
-
-        if (symbol != string.Empty)
+        
+        var charList = coursesList.Where(p => p.CharCode == symbol).ToList();
+        if (charList.Any())
         {
             courses.IsSymbol = true;
             courses.ListCoursesInfo = coursesList.Where(p => p.CharCode == symbol).ToList();
